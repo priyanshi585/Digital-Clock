@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body{
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(156, 142, 243);
+        }
+        .main{
+            border: 2px solid wheat ;
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 200px;
+            background-color: rgb(200, 195, 231);
+            box-shadow: 2px 2px 5px 15px wheat;
+        }
+    </style>
+    <title>Digital Clock</title>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Digital Clock</h1>
+      <h3>Current Time: <span>00:00</span></h3>
+    </div>
+    <script>
+      function getCurrentTime() {
+        var time = new Date().toLocaleTimeString().toLocaleUpperCase();
+        var target = document.querySelector("span");
+        target.innerText = time;
+      }
+      setInterval(getCurrentTime, 1000);
+    </script>
+  </body>
+</html>
